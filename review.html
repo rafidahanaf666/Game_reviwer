@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviews - Game Reviewer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    .review-list {
+      max-width: 900px;
+      margin: 2em auto;
+      padding: 2em;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+    }
+
+    .review-item {
+      border-bottom: 1px solid #444;
+      padding: 1em 0;
+    }
+
+    .review-item:last-child {
+      border-bottom: none;
+    }
+
+    .review-title {
+      color: #00ffcc;
+      font-size: 1.4em;
+      margin-bottom: 0.2em;
+    }
+
+    .review-meta {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-bottom: 0.5em;
+    }
+
+    .review-text {
+      font-size: 1.05em;
+      color: #ddd;
+    }
+
+    .no-reviews {
+      text-align: center;
+      font-size: 1.2em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="add-review.html">Add Review</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="review-list">
+      <h1 style="text-align: center;">📋 Game Reviews</h1>
+      <div id="reviewsContainer">
+        <!-- Reviews will be injected here via JS -->
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const reviewsContainer = document.getElementById("reviewsContainer");
+      const reviews = JSON.parse(localStorage.getItem("gameReviews")) || [];
+
+      if (reviews.length === 0) {
+        reviewsContainer.innerHTML = '<p class="no-reviews">No reviews yet. Be the first to add one!</p>';
+        return;
+      }
+
+      reviews.forEach((review) => {
+        const reviewDiv = document.createElement("div");
+        reviewDiv.classList.add("review-item");
+
+        reviewDiv.innerHTML = `
+          <div class="review-title">${review.title}</div>
+          <div class="review-meta">Genre: ${review.genre} | Rating: ${review.rating}/10</div>
+          <div class="review-text">${review.reviewText}</div>
+        `;
+
+        reviewsContainer.appendChild(reviewDiv);
+      });
+    });
+  </script>
+</body>
+</html>
