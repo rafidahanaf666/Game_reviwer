@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Review - Game Reviewer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="add-review.html">Add Review</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Add a Game Review</h1>
+      <form id="reviewForm">
+        <label for="title">Game Title:</label>
+        <input type="text" id="title" placeholder="Enter game name" required />
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" placeholder="e.g. RPG, FPS, Strategy" required />
+
+        <label for="rating">Rating (1-10):</label>
+        <input type="number" id="rating" min="1" max="10" required />
+
+        <label for="reviewText">Your Review:</label>
+        <textarea id="reviewText" placeholder="Write your thoughts..." required></textarea>
+
+        <button type="submit">Submit Review</button>
+        <p id="successMessage" style="display: none; color: #00ffcc; margin-top: 10px;">✅ Review added successfully!</p>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
