@@ -9,7 +9,7 @@ body, html {
 
 /* Dark overlay */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(24, 24, 24, 0.75);
   min-height: 100vh;
   padding: 1em;
 }
