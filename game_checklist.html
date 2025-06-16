@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Checklist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: url('home-photo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Dark overlay */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      min-height: 100vh;
+      padding: 1em;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1em;
+      border-radius: 10px;
+      margin-bottom: 2em;
+    }
+
+    nav a {
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px #00ffcc;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 2em;
+      text-align: center;
+    }
+
+    main h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      color: #00ffcc;
+    }
+
+    main p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 2em;
+    }
+
+    form.checklist-form {
+      background-color: #111;
+      padding: 1.5rem;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 1rem;
+      box-shadow: 0 0 10px #00ffcc88;
+      text-align: left;
+    }
+
+    .game-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      margin-bottom: 1rem;
+      background-color: #222;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .game-item:hover {
+      border-color: #00ffcc;
+      box-shadow: 0 0 8px #00ffcc88;
+    }
+
+    .game-item label {
+      cursor: pointer;
+      font-size: 1.1rem;
+      flex-grow: 1;
+      user-select: none;
+    }
+
+    .game-item input[type="checkbox"] {
+      margin-right: 15px;
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+
+    .game-item select {
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: none;
+      background-color: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 80px;
+      transition: background-color 0.3s ease;
+    }
+
+    .game-item select:disabled {
+      background-color: #444;
+      color: #ccc;
+      cursor: not-allowed;
+      font-weight: normal;
+    }
+
+    button {
+      background-color: #00ffcc;
+      color: #000;
+      font-weight: bold;
+      padding: 0.8em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
+      width: 100%;
+      margin-top: 1.5em;
+    }
+
+    button:hover {
+      background-color: #00bfa6;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main {
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="add_review.html">Add Review</a>
+      <a href="game_checklist.html">Game Checklist</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+      <h1>Game Checklist</h1>
+      <p>Select the games you have played and rate them below.</p>
+
+      <form class="checklist-form" id="checklistForm">
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Elden Ring" /> Elden Ring</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Minecraft" /> Minecraft</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Fortnite" /> Fortnite</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="The Witcher 3" /> The Witcher 3</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Overwatch" /> Overwatch</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Cyberpunk 2077" /> Cyberpunk 2077</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Animal Crossing" /> Animal Crossing</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Call of Duty" /> Call of Duty</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Among Us" /> Among Us</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="game-item">
+          <label><input type="checkbox" name="game" value="Dark Souls" /> Dark Souls</label>
+          <select name="rating" disabled>
+            <option value="">Rate</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit Checklist</button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    // Enable rating dropdown only if checkbox is checked
+    const checkboxes = document.querySelectorAll('.checklist-form input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', (e) => {
+        const select = e.target.closest('.game-item').querySelector('select');
+        select.disabled = !e.target.checked;
+        if (!e.target.checked) select.value = '';
+      });
+    });
+
+    // Optional: handle form submit
+    document.getElementById('checklistForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Checklist submitted! Thank you.');
+      e.target.reset();
+
+      // disable all selects again
+      document.querySelectorAll('select').forEach(select => select.disabled = true);
+    });
+  </script>
+</body>
+</html>
