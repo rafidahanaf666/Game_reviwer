@@ -8,33 +8,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
     .about-section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2em auto;
       padding: 2em;
       background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
+      border-radius: 12px;
       text-align: left;
       color: #ccc;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
+    }
+
+    .about-section h1 {
+      color: #00ffcc;
+      font-size: 2.8em;
+      margin-bottom: 0.5em;
+      text-align: center;
     }
 
     .about-section h2 {
       color: #00ffcc;
+      margin-top: 2em;
       margin-bottom: 0.5em;
       font-size: 2em;
+      text-align: center;
     }
 
     .about-section p {
-      font-size: 1.1em;
-      line-height: 1.6;
+      font-size: 1.15em;
+      line-height: 1.7;
+      margin-bottom: 1em;
     }
 
     .about-highlight {
-      background-color: rgba(0, 255, 204, 0.15);
+      background-color: rgba(0, 255, 204, 0.1);
       padding: 1em;
-      border-left: 4px solid #00ffcc;
-      border-radius: 5px;
-      margin-top: 1em;
+      border-left: 5px solid #00ffcc;
+      border-radius: 8px;
+      margin: 1.5em 0;
       font-style: italic;
+      font-size: 1.1em;
     }
 
     .about-icons {
@@ -54,6 +66,35 @@
       width: 64px;
       height: 64px;
       margin-bottom: 0.5em;
+    }
+
+    .specialties {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      margin-top: 2em;
+      padding: 1em;
+      background-color: rgba(255, 255, 255, 0.03);
+      border-radius: 10px;
+      border-left: 4px solid #00ffcc;
+    }
+
+    .specialty-item {
+      font-size: 1.1em;
+    }
+
+    .rating-box {
+      text-align: center;
+      margin-top: 2em;
+      padding: 1.5em;
+      background-color: rgba(0, 255, 204, 0.08);
+      border-radius: 10px;
+      border: 2px dashed #00ffcc;
+    }
+
+    .rating-box span {
+      font-size: 2em;
+      color: gold;
     }
 
     @media (max-width: 600px) {
